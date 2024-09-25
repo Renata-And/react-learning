@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Rating } from './components/rating/Rating';
+import { Accordion } from './components/accordion/Accordion';
+import { OnOff } from './components/onOff/OnOff';
+import { UncontrolledAccordion } from './components/uncontrolledAccordion/UncontrolledAccordion ';
+import { UncontrolledRating } from './components/uncontrolledRating/UncontrolledRating';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <AppTitle />
+      <Rating value={0} />
+      <Rating value={1} />
+      <Rating value={2} />
+      <Rating value={3} />
+      <Rating value={4} />
+      <Rating value={5} />
+      <Accordion titleValue={'Menu'} collapsed />
+      <Accordion titleValue={'Users'} /> */}
+      {/* <OnOff />
+      <OnOff /> */}
+      {/* <UncontrolledAccordion titleValue={'Menu'} />
+      <UncontrolledAccordion titleValue={'Users'} /> */}
+      <UncontrolledRating />
     </div>
   );
 }
 
 export default App;
+
+
+const AppTitle = () => {
+  return <>This is App Component</>
+}
