@@ -1,0 +1,31 @@
+div {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  font-size: 24px;
+  color: #470099;
+  letter-spacing: 1px;
+
+}
+
+select {
+  width: 70%;
+  padding: 10px 15px;
+  color: #4b4a4a;
+  font-family: Tahoma, sans-serif;
+  letter-spacing: 1px;
+  border-radius: 5px;
+}
+
+select:focus {
+  border-color: #470099; /* Меняем цвет границы при фокусе */
+  box-shadow: 0 0 5px rgba(73, 0, 133, 0.5); /* Добавляем тень при фокусе */
+}
+
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

@@ -1,10 +1,13 @@
+import React, { useState } from 'react'
 
 type OnOffPropsType = {
-  setOn: (value: boolean) => void
-  on: boolean
+  onChange: (on: boolean) => void
+  defaultOn?: boolean
 }
 
-export const OnOff = (props: OnOffPropsType) => {
+export const UncontrolledOnOff = (props: OnOffPropsType) => {
+  const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
+
   const wrapperStyle = {
     display: 'flex',
     gap: '5px'
@@ -19,7 +22,7 @@ export const OnOff = (props: OnOffPropsType) => {
     color: '#cfcfcf',
     fontFamily: 'Helvetica, sans - serif',
     fontWeight: '700',
-    backgroundColor: props.on ? '#1fb401' : '#fff'
+    backgroundColor: on ? '#1fb401' : '#fff'
   }
 
   const offStyle = {
@@ -32,7 +35,7 @@ export const OnOff = (props: OnOffPropsType) => {
     color: '#cfcfcf',
     fontFamily: 'Helvetica, sans - serif',
     fontWeight: '700',
-    backgroundColor: props.on ? '#fff' : '#ad0000'
+    backgroundColor: on ? '#fff' : '#ad0000'
   }
 
   const lampStyle = {
@@ -41,13 +44,23 @@ export const OnOff = (props: OnOffPropsType) => {
     height: '30px',
     border: '2px solid #cfcfcf',
     borderRadius: '50%',
-    backgroundColor: props.on ? '#1fb401' : '#ad0000'
+    backgroundColor: on ? '#1fb401' : '#ad0000'
+  }
+
+  const onClicked = () => {
+    setOn(true);
+    props.onChange(true);
+  }
+
+  const offClicked = () => {
+    setOn(false);
+    props.onChange(false);
   }
 
   return (
     <div style={wrapperStyle}>
-      <div style={onStyle} onClick={() => props.setOn(true)}>on</div>
-      <div style={offStyle} onClick={() => props.setOn(false)}>off</div>
+      <div style={onStyle} onClick={onClicked}>on</div>
+      <div style={offStyle} onClick={offClicked}>off</div>
       <div style={lampStyle}></div>
     </div>
   )
